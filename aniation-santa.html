@@ -1,0 +1,58 @@
+<div id="moose" style="background-position: 225px center; top: 350px;"></div>
+	    <div id="ny__santa1" style="left: -225px;"></div>
+	    
+		<style type="text/css"> 
+			div#moose {
+				position: fixed;
+				background: url('ssd_modal_left_3.png') 225px no-repeat;
+				width: 225px;
+				height: 321px;
+				right: 0px;
+				top: 370px;
+				z-index:999999;
+			}
+			
+			#ny__santa1 {
+			    position: fixed;
+			    background: url('making-snowman-left.png') 0 0 no-repeat;
+			    width: 225px;
+			    height: 321px;
+			    left: -225px;
+			    bottom: 370px;
+			    z-index: 999999;
+			    transition: all linear 1s;
+			}
+		</style>
+		
+		<script>
+	
+		$('body').prepend('<div id="moose"></div>');
+			function helloMoose () {
+				setTimeout(goMoose, 1000);
+				function goMoose () {
+					$('#moose').animate({backgroundPosition: '0px', top:'300px'}, 2700);
+					setTimeout(byeMoose, 6000);
+					function byeMoose () {
+						$('#moose').animate({backgroundPosition: '225px', top:'350px'}, 2000);
+					}
+				}
+			}
+			
+			$(document).ready(helloMoose ());
+		</script>
+		
+		<script>
+		$('body').append('<div id="ny__santa1"></div>');
+			function helloSanta () {
+				setTimeout(goSanta, 10000);
+				function goSanta () {
+					$('#ny__santa1').css({left:0});
+					setTimeout(byeSanta, 6000);
+					function byeSanta () {
+						$('#ny__santa1').css({left:'-225px'});
+					}
+				}
+			}
+			
+			$(document).ready(helloSanta ());
+		</script>	
